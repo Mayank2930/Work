@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <!-- ======= Mobile nav toggle button ======= -->
+    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+    <!-- ======= Header ======= -->
+    <header id="header">
+        <div class="d-flex flex-column">
+
+            <div class="profile">
+                <p class="text-light m-auto portfolio-wrap" style="padding-top: 30px; padding-bottom: 10px; align-content: center">Welcome Back</p>
+                <h1 class="text-light">{{ user.username }}</h1>
+
+            </div>
+            {#        Including Nabbar#}
+            <nav id="navbar" class="nav-menu navbar">
+                <ul>
+                    <li><a href="#merchant_detail" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Merchant Detail</span></a></li>
+                    <li><a href="/" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Back Home</span></a></li>
+                </ul>
+            </nav><!-- .nav-menu -->
+
+        </div>
+    </header><!-- End Header -->
+
+
+    <main id="main" style="background-color: #eaeaea">
+        <!-- ======= Contact Section ======= -->
+        <section id="merchant_form" class="contact justify-content-center" >
+            <div class="container" >
+
+                <div class="section-title">
+                    <h2>Merchant Detail</h2>
+                    {% include 'utils/message.html' %}
+                    <div class="section-form text-end ">
+                        <a class="button" Onclick="return ConfirmDelete();" style="background-color: #f14343;"
+                           href="delete">Delete Merchant</a>
+                    </div>
+                </div>
+
+                <div class="row" data-aos="fade-in">
+
+                    <div class="d-flex align-items-stretch">
+
+
+                        <div class="col-lg-10 mt-5 mt-lg-0 d-flex align-items-stretch">
+
+
+                            {#Merchant Form starts From Here#}
+                            <form method="post" role="form" class="merchant-form justify-content-center">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                        <label for="id_file_name">File Name</label>
+                                        <input type="text" name="file_name" class="form-control" value="{{ merchant.file_name }}" id="id_file_name">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="id_tid">TID</label>
+                                        <input type="text" name="tid" class="form-control" value="{{ merchant.tid }}" id="id_tid" >
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="id_aggregator_module">Aggregator module</label>
+                                        <input type="text" name="aggregator_module" class="form-control" value="{{ merchant.aggregator_module }}" id="id_aggregator_module">
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        <label for="id_legal_name">Legal name</label>
+                                        <input type="text" name="legal_name" class="form-control" value="{{ merchant.legal_name }}" id="id_legal_name">
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        <label for="id_primary_email">Primary email</label>
+                                        <input type="text" name="primary_email" class="form-control" value="{{ merchant.primary_email }}" id="id_primary_email">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="id_secondary_email">Secondary email</label>
+                                        <input type="text" name="secondary_email" class="form-control" value="{{ merchant.secondary_email }}" id="id_secondary_email">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="id_bcc_email">Bcc email</label>
+                                        <input type="text" name="bcc_email" class="form-control" value="{{ merchant.bcc_email }}" id="id_bcc_email">
+                                    </div>
+                                </div>
+                                <div class="text-center"><button type="submit">Update Merchant</button></div>
+
+                            </form>{#Merchant Form End Here#}
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section><!-- End Contact Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div>
+                <a href="/logout/" class="button" >Logout</a>
+            </div>
+
+
+        </div>
+    </footer><!-- End  Footer -->
+<script>
+    function ConfirmDelete()
+    {
+      return confirm("Are you sure you want to delete?");
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <!-- ======= Mobile nav toggle button ======= -->
+    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+    <!-- ======= Header ======= -->
+    <header id="header">
+        <div class="d-flex flex-column">
+
+            <div class="profile">
+                <p class="text-light m-auto portfolio-wrap" style="padding-top: 30px; padding-bottom: 10px; align-content: center">Welcome Back</p>
+                <h1 class="text-light">{{ user.username }}</h1>
+
+            </div>
+<!--            {#        Including Navbar#}-->
+            <nav id="navbar" class="nav-menu navbar">
+                <ul>
+                    <li><a href="#send_report" class="nav-link scrollto"><i class="bx bxs-book-alt"></i> <span>Send Reports</span></a></li>
+                    <li><a href="/" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Back Home</span></a></li>
+                </ul>
+            </nav><!-- .nav-menu -->
+
+        </div>
+    </header><!-- End Header -->
+
+
+    <main id="main" style="background-color: #eaeaea">
+        <!-- ======= Paramotor All Reports ======= -->
+        <section id="send_report" class="facts">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Sent Mail</h2>
+                </div>
+
+                <div class="row no-gutters">
+                    <form action="send-reports/" enctype="multipart/form-data" method="post" role="form" class="merchant-form justify-content-center">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="section-form text-center ">
+                                    <label for="id_paid_date" style="text-align: left">Please Select Settlement Date:</label>
+                                    <br>
+                                    <input type="date" id="id_paid_date" name="paid_date" style="border-top-right-radius: 10px;padding: 10px;margin: 10px;border-width: 0.5px" required>
+                                    <hr>
+                                    <button class="button" type="submit">Send reports</button>
+                                </div>
+
+                            </div>
+                            {#                here i will put existing tid#}
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">TID</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for tid in non_existing_tids %}
+                                    <tr>
+                                        <th scope="row">{{ tid }}</th>
+                                        <td>N.A</td>
+                                    </tr>
+                                {% endfor %}
+                                {% for tid in existing_tids %}
+                                    <tr>
+                                        <th scope="row">{{ tid }}</th>
+                                        <td>Exists</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+
+                            {#                    here i will put non existing tid#}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section><!-- End Facts Section -->
+
+
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div>
+                <a href="/logout/" class="button" >Logout</a>
+            </div>
+
+
+        </div>
+    </footer><!-- End  Footer -->
+
+{% endblock %}

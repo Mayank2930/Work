@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <!-- ======= Mobile nav toggle button ======= -->
+    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+    <!-- ======= Header ======= -->
+    <header id="header">
+        <div class="d-flex flex-column">
+
+            <div class="profile">
+                <p class="text-light m-auto portfolio-wrap" style="padding-top: 30px; padding-bottom: 10px; align-content: center">Welcome Back</p>
+                <h1 class="text-light">{{ user.username }}</h1>
+
+            </div>
+            {#        Including Nabbar#}
+            <nav id="navbar" class="nav-menu navbar">
+                <ul>
+                    <li><a href="#paramotor_all_reports" class="nav-link scrollto"><i class="bx bxs-book-alt"></i> <span>Paramotor All Reports</span></a></li>
+                    <li><a href="#final_all_reports" class="nav-link scrollto"><i class="bx bx-book-add"></i> <span>Final All Reports</span></a></li>
+                    <li><a href="#download_reports" class="nav-link scrollto"><i class="bx bx-download"></i> <span>Download Reports</span></a></li>
+                    <li><a href="/" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Back Home</span></a></li>
+                </ul>
+            </nav><!-- .nav-menu -->
+
+        </div>
+    </header><!-- End Header -->
+
+
+    <main id="main" style="background-color: #eaeaea">
+        <!-- ======= Paramotor All Reports ======= -->
+{#        <section id="paramotor_all_reports" class="contact justify-content-center" >#}
+{#            <div class="container" >#}
+{##}
+{#                <div class="section-title">#}
+{#                    <h2>Paramotor All Reports</h2>#}
+{#                    <p>Please Check these are the files you uploaded</p>#}
+{#                </div>#}
+{##}
+{#                <div class="row" data-aos="fade-in">#}
+{##}
+{##}
+{#                    <table id="example" class="table table-striped" style="width:100%">#}
+{#                        <thead>#}
+{#                        <tr>#}
+{#                            <th>TID</th>#}
+{#                            <th>MID</th>#}
+{#                            <th>Merchant Name</th>#}
+{#                            <th>Txn. Amount</th>#}
+{#                        </tr>#}
+{#                        </thead>#}
+{#                        <tbody>#}
+{#                        {% for transactions in paramotor_all_reports %}#}
+{#                            <tr>#}
+{#                                <td>{{ transactions.TID }}</td>#}
+{#                                <td>{{ transactions.MID }}</td>#}
+{#                                <td>{{ transactions.MerchantName}}</td>#}
+{#                                <td>{{ transactions.TxnAmt }}</td>#}
+{##}
+{#                            </tr>#}
+{#                        {% endfor %}#}
+{#                        </tbody>#}
+{#                        <tfoot>#}
+{#                        <tr>#}
+{#                            <th>TID</th>#}
+{#                            <th>MID</th>#}
+{#                            <th>Merchant Name</th>#}
+{#                            <th>Txn. Amount</th>#}
+{#                        </tr>#}
+{#                        </tfoot>#}
+{#                    </table>#}
+{##}
+{##}
+{##}
+{#                </div>#}
+{##}
+{#            </div>#}
+{#        </section><!-- End Paramotor All Reports Section -->#}
+{##}
+{#        <!-- ======= Final All Reports ======= -->#}
+{#        <section id="final_all_reports" class="contact justify-content-center" >#}
+{#            <div class="container" >#}
+{##}
+{##}
+{#                <div class="section-title">#}
+{#                    <h2>Final All Reports</h2>#}
+{#                    <p>Please Check these are the files you uploaded</p>#}
+{#                </div>#}
+{##}
+{#                <div class="row" data-aos="fade-in">#}
+{##}
+{##}
+{#                    <table id="example" class="table table-striped" style="width:100%">#}
+{#                        <thead>#}
+{#                        <tr>#}
+{#                            <th>TID</th>#}
+{#                            <th>Merchant Name</th>#}
+{#                            <th>Sum of Txn. Amount </th>#}
+{#                            <th>Channel</th>#}
+{#                        </tr>#}
+{#                        </thead>#}
+{#                        <tbody>#}
+{#                        {% for transactions in final_reports %}#}
+{#                            <tr>#}
+{#                                <td>{{ transactions.TID }}</td>#}
+{#                                <td>{{ transactions.MerchantName }}</td>#}
+{#                                <td>{{ transactions.SumOfTxnAmt }}</td>#}
+{#                                <td>{{ transactions.CHANNEL }}</td>#}
+{##}
+{#                            </tr>#}
+{#                        {% endfor %}#}
+{#                        </tbody>#}
+{#                        <tfoot>#}
+{#                        <tr>#}
+{#                            <th>TID</th>#}
+{#                            <th>Merchant Name</th>#}
+{#                            <th>Sum of Txn. Amount </th>#}
+{#                            <th>Channel</th>#}
+{#                        </tr>#}
+{#                        </tfoot>#}
+{#                    </table>#}
+{##}
+{##}
+{##}
+{#                </div>#}
+{#            </div>#}
+{#        </section><!-- End Final All Reports Section -->#}
+
+        <section id="download_reports" class="contact justify-content-center" >
+            <div class="container" >
+
+                <div class="section-title">
+                    <h2>Download Reports</h2>
+                </div>
+
+
+                    <div  class="merchant-form ">
+
+                        <form action="download/" enctype="multipart/form-data" method="post" role="form" >
+                            {% csrf_token %}
+
+                                    <button class="button" type="submit" style="margin: 10px">Downloads reports</button>
+                            </form>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+        </section><!-- End Contact Section -->
+
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div>
+                <a href="/logout/" class="button" >Logout</a>
+            </div>
+
+
+        </div>
+    </footer><!-- End  Footer -->
+
+{% endblock %}
