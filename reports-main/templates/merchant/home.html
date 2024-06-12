@@ -4,19 +4,20 @@
 {% block content %}
 
     <!-- ======= Mobile nav toggle button ======= -->
-    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+    {% comment %} <i class="bi bi-list mobile-nav-toggle d-xl-none"></i> {% endcomment %}
+    <i class="bi bi-three-dots mobile-nav-toggle d-xl-none"></i>
 
     <!-- ======= Header ======= -->
     <header id="header">
         <div class="d-flex flex-column">
 
             <div class="profile">
-                <p class="text-light m-auto portfolio-wrap" style="padding-top: 30px; padding-bottom: 10px; align-content: center">Welcome Back</p>
-                <h1 class="text-light">{{ user.username }}</h1>
+                <p class="text-light m-auto portfolio-wrap">Welcome Back</p>
+                <h1 class="text-light username">{{ user.username }}</h1>
 
             </div>
-            {#        Including Nabbar#}
-            {% include 'utils/navbar.html' %}
+            {#Including Nabbar#}
+            {% include 'utils/navbar.html' %} 
 
         </div>
     </header><!-- End Header -->
@@ -38,7 +39,8 @@
         <!-- ======= Footer ======= -->
         <footer id="footer">
             <div class="container">
-                <div>
+                <div class="inner-container">
+                    <i class="bi bi-box-arrow-right"></i>
                     <a href="/logout/" class="button" >Logout</a>
                 </div>
 

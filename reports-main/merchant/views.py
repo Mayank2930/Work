@@ -7,7 +7,7 @@ import pandas as pd
 import os
 # Create your views here.
 from .models import Merchant
-import logger
+
 
 
 # Home Screen

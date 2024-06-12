@@ -1,7 +1,27 @@
-body {
+/* body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
   background-color: #eaeaea;
+}
+
+ html {
+  height: 100%;
+ } */
+
+ html {
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0px;
+  min-height: 100%;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  color: #272829;
+  background-color: #eaeaea
 }
 
 a {
@@ -14,9 +34,13 @@ a:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
+
+p {
+  padding: 81px;
+} 
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -61,7 +85,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 9997;
   transition: all 0.5s;
   padding: 0 15px;
-  background: #040b14;
+  background: #112e54;
   overflow-y: auto;
 }
 #header .profile img {
@@ -152,6 +176,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 .nav-menu a:hover i, .nav-menu .active i, .nav-menu .active:focus i, .nav-menu li:hover > a i {
   color: #149ddd;
+}
+/* style="padding-top: 30px; padding-bottom: 10px; align-content: center" */
+.profile .portfolio-wrap {
+   padding-top: 30px;
+   padding-bottom: 10px;
+   align-content: center;
+   justify-content: center;
 }
 
 /* Mobile Navigation */
@@ -249,6 +280,9 @@ h1, h2, h3, h4, h5, h6 {
 section {
   padding: 60px 0;
   overflow: hidden;
+  height: 100vh; /* Full viewport height */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .section-bg {
@@ -264,7 +298,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #173b6c;
+  color: #112E54;
 }
 .section-title h2::after {
   content: "";
@@ -928,7 +962,7 @@ section {
   bottom: 0;
   width: 300px;
   z-index: 9999;
-  background: #040b14;
+  background: #112e54;
 }
 #footer .copyright {
   text-align: center;
@@ -939,6 +973,19 @@ section {
   font-size: 13px;
   color: #eaebf0;
 }
+
+#footer .container{
+  padding: 30px;
+}
+
+#footer .inner-container{
+  padding-top: 50px;
+  padding-bottom: 10px;
+  padding-left: 60px;
+  font-weight: bolder;
+  font-size: large;
+}
+
 @media (max-width: 1199px) {
   #footer {
     position: static;
