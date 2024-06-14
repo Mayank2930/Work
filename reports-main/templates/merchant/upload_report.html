@@ -4,7 +4,7 @@
 
         <div class="section-title">
             <h2 class="H2">Upload Report</h2>
-            <p>Please upload the necessary files to generate the PDF </p>
+            {% comment %} <p class="upload-description">Please upload the necessary files to generate the PDF </p> {% endcomment %}
         </div>
 
         <div class="row skills-content">
@@ -14,25 +14,39 @@
                     {% csrf_token %}
                     <div class="row">
                         <div class="form-group">
-                            <div class="section-form text-end ">
-                                <label for="id_paramotor_all_reports">Paramotor All Reports</label>
-                                <input type="file" name="paramotor_all_reports" id="id_paramotor_all_reports" required>
-                                <hr>
-                                <label for="id_final_all_reports">Final All Reports</label>
-                                <input type="file" name="final_all_reports" id="id_final_all_reports" required>
-                                <hr>
-                                <button class="button" type="submit">Upload reports</button>
+                            <div class="section-form text-end">
+                                <div class="upload-container" id="drop-area">
+                                    <div id="img-view" class="drag-drop-container">
+                                        <i class="bi bi-cloud-upload-fill" style="font-size:100px"></i>
+                                        {% comment %} <label for="id_paramotor_all_reports">Paramotor All Reports</label> {% endcomment %}
+                                        <p class="Drag-drop-text">Drag and Drop or click here <br>to upload files</p>
+                                        <span class="span-drag-drop">Upload files from the desktop</span>
+                                        {% comment %} <label for="id_paramotor_all_reports" class="span-drag-drop"><span>Browse Files</span></label> {% endcomment %}
+                                        <input type="file" name="paramotor_all_reports_and_final_all_reports" class="file-selector" id="id_paramotor_all_reports"><br><br>
+                                        <button class="file-selector">Upload files</button>
+                                        {% comment %} <input type="file" class="file-selector" name="paramotor_all_reports_and_final_all_reports" id="id_paramotor_all_reports"> {% endcomment %}
+                                        {% comment %} <hr> {% endcomment %}
+                                        {% comment %} <label for="id_final_all_reports">Final All Reports</label> {% endcomment %}
+                                        {% comment %} <input type="file" name="final_all_reports" id="id_final_all_reports" hidden> {% endcomment %}
+                                        {% comment %} <hr>   {% endcomment %}
+                                        {% comment %} <button class="button" type="submit">Upload reports</button> {% endcomment %}
+                                    </div>
+                                </div>
+                                <div class="list-section">
+                                    <div class="list-title">Uploaded files</div>
+                                    <div class="list">
+                                        <li class="in-prog">
+                                            <div class="col"></div>
+                                                <div class="file-name">File name</div>
+                                            </div>  
+                                        </li>
+                                    </div> 
+                                </div> 
                             </div>
                         </div>
-
-
-
                     </div>
                 </form>
-
             </div>
-
         </div>
-
     </div>
 </section><!-- End Skills Section -->

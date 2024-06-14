@@ -10,41 +10,41 @@
 
         </div>
         <div class="row">
+            <div class="table-container">
+                <table id="example" class="table table-striped" style="width:100%">
+                    <thead>
+                    <tr>
+                        <th>TID</th>
+                        <th>Aggregator</th>
+                        <th>Legal Name</th>
+                        <th>Primary Email</th>
+                        <th>Update</th>
 
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for person in merchant %}
+                    <tr>
+                        <td>{{ person.tid }}</td>
+                        <td>{{ person.aggregator_module }}</td>
+                        <td>{{ person.legal_name }}</td>
+                        <td>{{ person.primary_email }}</td>
+                        <td><a href="merchant-detail/{{ person.id }}">Update</a> </td>
 
-            <table id="example" class="table table-striped" style="width:100%">
-                <thead>
-                <tr>
-                    <th>TID</th>
-                    <th>Aggregator</th>
-                    <th>Legal Name</th>
-                    <th>Primary Email</th>
-                    <th>Update</th>
-
-                </tr>
-                </thead>
-                <tbody>
-                {% for person in merchant %}
-                <tr>
-                    <td>{{ person.tid }}</td>
-                    <td>{{ person.aggregator_module }}</td>
-                    <td>{{ person.legal_name }}</td>
-                    <td>{{ person.primary_email }}</td>
-                    <td><a href="merchant-detail/{{ person.id }}">Update</a> </td>
-
-                </tr>
-                {% endfor %}
-                </tbody>
-                <tfoot>
-                <tr>
-                    <th>TID</th>
-                    <th>Aggregator</th>
-                    <th>Legal Name</th>
-                    <th>Primary Email</th>
-                    <th>Update</th>
-                </tr>
-                </tfoot>
-            </table>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th>TID</th>
+                        <th>Aggregator</th>
+                        <th>Legal Name</th>
+                        <th>Primary Email</th>
+                        <th>Update</th>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
         </div>
     </div>
 
