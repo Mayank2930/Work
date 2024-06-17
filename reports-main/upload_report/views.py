@@ -14,13 +14,9 @@ def upload_files(request):
     if request.method == 'POST':
         count = 0
         try: 
-            uploaded_files = request.FILES.getlist('paramotor_all_reports_and_final_all_reports')
-
-            if len(uploaded_files) < 2:
-                return HttpResponse("Please upload two files.")
-
-            parm_all_reports = pd.read_excel(uploaded_files[0])
-            final_report = pd.read_excel(uploaded_files[1])
+            count = 0
+            parm_all_reports = pd.read_excel(request.FILES.get('paramotor_all_reports'))
+            final_report = pd.read_excel(request.FILES.get('final_all_reports'))
 
             zipObj = ZipFile('MerchantReport.zip', 'w')
 

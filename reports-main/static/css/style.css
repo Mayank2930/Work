@@ -277,6 +277,15 @@ p {
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
+
+#uploadreport {
+  background-image: url('reports-main\static\background-image\bg-1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 section {
   padding: 60px 0;
   overflow: hidden;
@@ -291,6 +300,11 @@ section {
 
 .section-title {
   padding-bottom: 30px;
+}
+
+.section-title p {
+  font-size: large;
+  color: #112E54;
 }
 .section-title h2 {
   font-size: 32px;
@@ -803,7 +817,7 @@ section {
 
 .section-form .button{
 
-  background-color: #1e52c9;
+  background-color: #112E54 ;
   border: none;
   color: white;
   padding: 10px 15px;
@@ -815,7 +829,7 @@ section {
   border-radius: 10px;
 }
 .section-form .button:hover{
-     background-color: #103b9f;
+     background-color: #1b4a87;
 
 }
 
@@ -1022,80 +1036,62 @@ section {
   text-align: left; 
 }
 
-/* .upload-container{
+.upload-container{
   border: 1px solid #ccc; 
   padding: 15px; 
-  border-radius: 5px; 
+  border-radius: 20px; 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
   background-color: #f9f9f9; 
-} */
+  margin-top: -30px;
+  margin-left: 300px;
+  margin-right: -200px;
+}
+
+.input_1, .input_2 {
+  padding: 10px;
+}
+
+.button_upload {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.upload-container label{
+  color: #112E54;
+  font-weight: bold;
+  display: block;
+  float: left;
+}
+
+label:after { content: ": " }
+
+.img_1, .img_3, .img_2 {
+  padding: 10px;
+  padding-top: 15px;
+}
+
 
 /*--------------------------------------------------------------
 # Drag and drop
 --------------------------------------------------------------*/
 
-#drop-area {
-  margin-left: 200px;
-  width: 600px;
-  height: 370px;
-  padding: 30px;
-  background: #fff;
-  text-align: center;
-  border-radius: 20px;
-  border: 1px;
-  box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
-  position: relative;
-}
-
-#img-view {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  border: 2px dashed #bbb5ff;
-  background: #f7f8ff;
-}
-
-.bi-cloud-upload-fill{
-  width: 100px;
-  display: flex;
-  margin: 1px;
-  padding-left: 215px;
-  padding-top: 25px;
-}
-
-.Drag-drop-text{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin: 0px;
-}
-
-.span-drag-drop{
-  display: block;
-  font-size: 12px;
-  color: #777;
-  margin: 10px;
-}
-
-.drag-drop-container input{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.drag-drop-container button{
+.file-selector{
   color: white;
   background-color: #112E54;
   border: none;
   outline: none;
   padding: 7px 20px;
+  margin-left: 250px;
+  margin-right: -250px;
   border-radius: 8px;
   margin-top: 80px;
   cursor: pointer;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.file-selector:hover {
+  background-color: #1b4a87;
 }
 
 .upload-description {
@@ -1154,4 +1150,3 @@ section {
   text-align: left;
   font-size: 0.9rem;
 }
-
