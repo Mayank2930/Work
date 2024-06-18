@@ -5,7 +5,7 @@
 
         <div class="section-title">
             <h2>Send Report<i class="bi bi-envelope-arrow-up-fill img_2"></i></h2>
-            <p>Please Select The Zip File</p>
+            <p>Please Select the <strong>Zip File</strong></p>
         </div>
 
         <div class="row no-gutters">
@@ -15,15 +15,19 @@
                 <div class="row">
                     <div class="form-group">
                         <div class="section-form text-center ">
-                            <label for="id_send_report">Send Report </label>
-                            <br>
-                            <input type="file" name="send_report" id="id_send_report" required>
-                            <hr>
-{#                            <label for="id_paid_date" style="text-align: left">Please Select Settlement Date:</label>#}
-{#                            <br>#}
-{#                            <input type="date" id="id_paid_date" name="paid_date" style="border-top-right-radius: 10px;padding: 10px;margin: 10px;border-width: 0.5px">#}
-{#                            <hr>#}
-                            <button class="button" type="submit">Send reports</button>
+                            <div class="send-container">
+                                <label for="id_send_report">Send Report </label>
+                                <br>
+                                <input class="input_3" type="file" name="send_report" id="id_send_report" required>
+                                <div class="send-photo"><i class="bi bi-envelope-paper-fill h2"></i></div>
+    <!-- {#                       <label for="id_paid_date" style="text-align: left">Please Select Settlement Date:</label>#}
+    {#                            <br>#}
+    {#                            <input type="date" id="id_paid_date" name="paid_date" style="border-top-right-radius: 10px;padding: 10px;margin: 10px;border-width: 0.5px">#}
+    {#                            <hr>#} -->
+                            </div>
+                            <div class="send-button">
+                                <button class="send-reports-button" type="submit">Send reports</button>
+                            </div>
                         </div>
                     </div>
                 </div>

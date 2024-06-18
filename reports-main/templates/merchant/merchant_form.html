@@ -18,9 +18,9 @@
             {#        Including Nabbar#}
             <nav id="navbar" class="nav-menu navbar">
                 <ul>
-                    <li><a href="#merchant_form" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Merchant Form</span></a></li>
-                    <li><a href="#merchant_bulk_upload" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Merchant Bulk Upload</span></a></li>
-                    <li><a href="/" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Back Home</span></a></li>
+                    <li><a href="#merchant_form" class="nav-link scrollto"><i class="bi bi-database"></i> <span>Merchant Form</span></a></li>
+                    <li><a href="#merchant_bulk_upload" class="nav-link scrollto"><i class="bi bi-box-seam-fill"></i> <span>Merchant Bulk Upload</span></a></li>
+                    <li><a href="/" class="nav-link scrollto"><i class="bi bi-house"></i> <span>Back Home</span></a></li>
                 </ul>
             </nav><!-- .nav-menu -->
 
@@ -47,8 +47,6 @@
 
                         <div class="col-lg-10 mt-5 mt-lg-0 d-flex align-items-stretch">
 
-
-                            {#Merchant Form starts From Here#}
                             <form method="post" role="form" class="merchant-form justify-content-center">
                                 {% csrf_token %}
                                 <div class="row">
@@ -88,11 +86,9 @@
                                     </div>
                                 </div>
                                 <div class="text-center"><button type="submit">Add Merchant</button></div>
-                            </form>{#Merchant Form End Here#}
+                            </form>
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </section><!-- End Contact Section -->
@@ -110,24 +106,22 @@
                     <div class="d-flex align-items-stretch">
 
 
-                        <div class="col-lg-10 mt-5 mt-lg-0 d-flex align-items-stretch">
-                            <form action="merchant-bulk-upload/" enctype="multipart/form-data" method="post" role="form" class="merchant-form justify-content-center">
+                        <div class="col-lg-10 mt-5 mt-lg-0 d-flex align-items-stretch merchant_bulk_upload_div">
+                            <form action="merchant-bulk-upload/" enctype="multipart/form-data" method="post" role="form" class="merchant-bulk-form justify-content-center">
                                 {% csrf_token %}
                                 <div class="row">
                                     <div class="form-group col-md-12">
-                                        <label for="id_bulk_merchant">Select File</label>
-                                        <input type="file" name="bulk_merchant" id="id_bulk_merchant" required>
+                                        <label for="id_bulk_merchant" class="form-group-label">Select File</label>
+                                        <input type="file" class="input_4" name="bulk_merchant" id="id_bulk_merchant" required>
+                                        <div class="bulk-photo"><i class="bi bi-backpack4-fill h2"></i></div>
                                     </div>
-
-                                    <div class="text-center"><button type="submit">Add Merchant</button></div>
                                 </div>
                             </form>
                         </div>
-
                     </div>
-
                 </div>
             </div>
+            <div class="bulk-button"><button type="submit">Add Merchant</button></div>
         </section><!-- End Contact Section -->
 
     </main><!-- End #main -->
@@ -135,7 +129,8 @@
     <!-- ======= Footer ======= -->
     <footer id="footer">
         <div class="container">
-            <div>
+            <div class="inner-container">
+                <i class="bi bi-box-arrow-right"></i>
                 <a href="/logout/" class="button" >Logout</a>
             </div>
         </div>

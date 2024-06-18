@@ -2,8 +2,8 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-
-    {% comment %} <!-- ======= Mobile nav toggle button ======= -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <!-- ======= Mobile nav toggle button ======= -->
     <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
     <!-- ======= Header ======= -->
@@ -19,12 +19,12 @@
             <nav id="navbar" class="nav-menu navbar">
                 <ul>
                     <li><a href="#merchant_detail" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Merchant Detail</span></a></li>
-                    <li><a href="/" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Back Home</span></a></li>
+                    <li><a href="/" class="nav-link scrollto"><i class="bi bi-house"></i> <span>Back Home</span></a></li>
                 </ul>
             </nav><!-- .nav-menu -->
 
         </div>
-    </header><!-- End Header --> {% endcomment %}
+    </header><!-- End Header --> 
 
 
     <main id="main" style="background-color: #eaeaea">
@@ -36,7 +36,7 @@
                     <h2>Merchant Detail</h2>
                     {% include 'utils/message.html' %}
                     <div class="section-form text-end ">
-                        <a class="button" Onclick="return ConfirmDelete();" style="background-color: #f14343;"
+                        <a class="button" Onclick="return ConfirmDelete();" style="background-color: #112E54;"
                            href="delete">Delete Merchant</a>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
 
 
                             {#Merchant Form starts From Here#}
-                            <form method="post" role="form" class="merchant-form justify-content-center">
+                            <form method="post" role="form" class="merchant-update-form justify-content-center">
                                 {% csrf_token %}
                                 <div class="row">
                                     <div class="form-group col-md-12">
@@ -104,7 +104,8 @@
     <!-- ======= Footer ======= -->
     <footer id="footer">
         <div class="container">
-            <div>
+            <div class="inner-container">
+                <i class="bi bi-box-arrow-right"></i>
                 <a href="/logout/" class="button" >Logout</a>
             </div>
 

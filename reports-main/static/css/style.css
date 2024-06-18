@@ -279,7 +279,7 @@ p {
 --------------------------------------------------------------*/
 
 #uploadreport {
-  background-image: url('reports-main\static\background-image\bg-1.png');
+  background-image: url('/reports-main/static/css/bg-1.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -759,6 +759,11 @@ section {
   background-color: #149ddd;
 }
 
+.page-item.active .page-link {
+  background-color: #112E54;
+  border-color: #112E54;
+}
+
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
@@ -810,13 +815,44 @@ section {
 }
 .contact .merchant-form {
   width: 100%;
+  height: 100%;
   padding: 30px;
   background: #fff;
+  border-radius: 20px;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+  top: -30px;
+  height: 580px;
+}
+
+.contact .merchant-update-form{
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+  top: -60px;
+  height: 580px;
+}
+
+.contact .merchant_bulk_upload_div{
+  border: 1px solid #ccc; 
+  padding: 15px; 
+  border-radius: 20px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  background-color: #f9f9f9; 
+  height: 180px;
+  width: 370px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 350px;
+  position: relative;
+  top: 100px;
 }
 
 .section-form .button{
-
   background-color: #112E54 ;
   border: none;
   color: white;
@@ -828,22 +864,22 @@ section {
   cursor: pointer;
   border-radius: 10px;
 }
+
 .section-form .button:hover{
      background-color: #1b4a87;
-
 }
-
-.contact .merchant-form .form-group {
+.contact .merchant-form .form-group, .contact .merchant-update-form .form-group {
   padding-bottom: 8px;
+  border-radius: 20px;
 }
-.contact .merchant-form .validate {
+.contact .merchant-form .validate, .contact .merchant-update-form .validate {
   display: none;
   color: red;
   margin: 0 0 15px 0;
   font-weight: 400;
   font-size: 13px;
 }
-.contact .merchant-form .error-message {
+.contact .merchant-form .error-message,.contact .merchant-update-form .error-message {
   display: none;
   color: #fff;
   background: #ed3c0d;
@@ -851,10 +887,10 @@ section {
   padding: 15px;
   font-weight: 600;
 }
-.contact .merchant-form .error-message br + br {
+.contact .merchant-form .error-message br + br, .contact .merchant-update-form .error-message br + br {
   margin-top: 25px;
 }
-.contact .merchant-form .sent-message {
+.contact .merchant-form .sent-message, .contact .merchant-update-form .sent-message {
   display: none;
   color: #fff;
   background: #18d26e;
@@ -862,13 +898,13 @@ section {
   padding: 15px;
   font-weight: 600;
 }
-.contact .merchant-form .loading {
+.contact .merchant-form .loading, .contact .merchant-update-form .loading {
   display: none;
   background: #fff;
   text-align: center;
   padding: 15px;
 }
-.contact .merchant-form .loading:before {
+.contact .merchant-form .loading:before, .contact .merchant-update-form .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -880,33 +916,36 @@ section {
   -webkit-animation: animate-loading 1s linear infinite;
   animation: animate-loading 1s linear infinite;
 }
-.contact .merchant-form .form-group {
+.contact .merchant-form .form-group, .contact .merchant-update-form .form-group {
   margin-bottom: 15px;
+  border-radius: 20px;
 }
-.contact .merchant-form label {
+.contact .merchant-form label, .contact .merchant-update-form label  {
   padding-bottom: 8px;
 }
-.contact .merchant-form input, .contact .merchant-form textarea {
-  border-radius: 0;
+.contact .merchant-form input, .contact .merchant-form textarea,.contact .merchant-update-form input, .contact .merchant-update-form textarea {
+  border-radius: 8px;
   box-shadow: none;
   font-size: 14px;
 }
-.contact .merchant-form input {
+.contact .merchant-form input, .contact .merchant-update-form input {
   height: 44px;
 }
-.contact .merchant-form textarea {
+.contact .merchant-form textarea, .contact .merchant-update-form textarea {
   padding: 10px 15px;
 }
-.contact .merchant-form button[type=submit] {
-  background: #149ddd;
-  border: 0;
-  padding: 10px 24px;
-  color: #fff;
-  transition: 0.4s;
-  border-radius: 4px;
+.contact .merchant-form button[type=submit], .contact .merchant-update-form button[type=submit] {
+  color: white;
+  background-color: #112E54;
+  border: none;
+  outline: none;
+  padding: 7px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
-.contact .merchant-form button[type=submit]:hover {
-  background: #37b3ed;
+.contact .merchant-form button[type=submit]:hover, .contact .merchant-update-form button[type=submit]:hover {
+  background: #1b4a87;
 }
 @-webkit-keyframes animate-loading {
   0% {
@@ -1073,10 +1112,10 @@ label:after { content: ": " }
 
 
 /*--------------------------------------------------------------
-# Drag and drop
+# CSS for the changes done
 --------------------------------------------------------------*/
 
-.file-selector{
+.file-selector {
   color: white;
   background-color: #112E54;
   border: none;
@@ -1090,6 +1129,19 @@ label:after { content: ": " }
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
+.send-reports-button {
+  color: white;
+  background-color: #112E54;
+  border: none;
+  outline: none;
+  padding: 7px 20px;
+  border-radius: 8px;
+  position: relative;
+  left: -100px;
+  cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
 .file-selector:hover {
   background-color: #1b4a87;
 }
@@ -1098,55 +1150,78 @@ label:after { content: ": " }
   padding-left: 30px;
 }
 
-.drag-over-effect div.col:first-child{
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: scale(1.1);
+.section-form .send-container {
+  border: 1px solid #ccc; 
+  padding: 15px; 
+  border-radius: 20px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  background-color: #f9f9f9; 
+  margin-left: 300px;
+  margin-right: 380px;
+  margin-bottom: 60px;
+  height: 180px;
+  width: 370px;
+  position: relative;
+  top: -30px;
 }
 
-.drag-over-effect div.col:last-child{
-  opacity: 1;
-  visibility: visible;
-  pointer-events: none;
-  transform: scale(1);
+.send-photo{
+  position: relative;
+  top: 15px;
 }
 
-.list-section {
-  text-align: left;
-  margin: 0px 35px;
-  padding-bottom: 20px;
+.send-container .input_3, .input_4 {
+  padding: 10px;
+  padding-left: 50px;
 }
 
-.list-section .list-title{
-  font-size: 0.95rem;
+.send-container label, .form-group-label{
+  color: #112E54;
+  font-weight: bold;
+  display: block;
+  float: left;
+  margin: 10px;
+}
+
+.bi-envelope-paper-fill,  .bi-backpack4-fill{
   color: #112E54;
 }
 
-.list-section li{
+.bulk-photo i{
+  padding-left: 150px;
+  position: relative;
+  top: 10px;
+}
+
+.bulk-button {
   display: flex;
-  margin: 15px 0px;
-  padding-top: 4px;
-  padding-bottom: 2px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 150px;
+  right: 55px;
+}
+
+.bulk-button button{
+  color: white;
+  background-color: #112E54;
+  border: none;
+  outline: none;
+  padding: 7px 20px;
   border-radius: 8px;
-  transition-duration: 0.2s;
+  cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
-.list-section li:hover{
-  box-shadow: #EAEAEA 0px 0px 4px 0px, #eaeaea 0px 12px 16px 0px;
+/* Default styles for larger screens */
+.button {
+  width: 200px;
 }
 
-.list-section .col{
-  flex: 0.1;
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+  .button {
+      width: 100%;
+  }
 }
 
-.list-section li .col:nth-child(1){
-  flex: 0.15;
-  text-align: center;
-}
-
-.list-section li .col:nth-child(2){
-  flex: 0.75;
-  text-align: left;
-  font-size: 0.9rem;
-}
