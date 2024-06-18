@@ -278,14 +278,6 @@ p {
 # Sections General
 --------------------------------------------------------------*/
 
-#uploadreport {
-  background-image: url('/reports-main/static/css/bg-1.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-}
-
 section {
   padding: 60px 0;
   overflow: hidden;
@@ -1054,10 +1046,17 @@ section {
 
 .table-container {
   border: 1px solid #ccc; 
-  padding: 15px; 
+  padding: 2vmax; 
   border-radius: 20px; 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
   background-color: #f9f9f9; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dataTables_wrapper {
+  width: 100%;
 }
 
 .table-container table {
@@ -1077,17 +1076,36 @@ section {
 
 .upload-container{
   border: 1px solid #ccc; 
-  padding: 15px; 
+  height: 18vmax;
+  width: 30vmax;
+  padding: 1vmax; 
   border-radius: 20px; 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
   background-color: #f9f9f9; 
-  margin-top: -30px;
-  margin-left: 300px;
-  margin-right: -200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  min-width: 0;
+  left: 20vw;
+  top: -5vw;
 }
 
-.input_1, .input_2 {
-  padding: 10px;
+.upload-inner-container {
+  display: flex;
+  font-size: 1em;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  min-width: None;
+}
+
+.input_1-container, .input_2-container{
+  display: flex;
+  align-items: center;
+  justify-items: center;
 }
 
 .button_upload {
@@ -1216,7 +1234,7 @@ label:after { content: ": " }
 /* Default styles for larger screens */
 .button {
   width: 200px;
-}
+}  
 
 /* Media query for smaller screens */
 @media only screen and (max-width: 600px) {
