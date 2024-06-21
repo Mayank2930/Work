@@ -39,7 +39,7 @@ h1,h3, h4, h5, h6 {
 }
 
 p {
-  padding: 81px;
+  padding: 4vmax;
 } 
 
 /*--------------------------------------------------------------
@@ -80,22 +80,23 @@ p {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: 19.5vmax;
   transition: all ease-in-out 0.5s;
   z-index: 9997;
   transition: all 0.5s;
-  padding: 0 15px;
+  padding: 0 0.97vmax;
   background: #112e54;
   overflow-y: auto;
 }
 #header .profile img {
-  margin: 15px auto;
+  margin: 0.97vmax auto;
   display: block;
-  width: 120px;
-  border: 8px solid #2c2f3f;
+  width: 7.8vmax;
+  border: 0.52vmax solid #2c2f3f;
 }
+
 #header .profile h1 {
-  font-size: 24px;
+  font-size: 1.52vmax;
   margin: 0;
   padding: 0;
   font-weight: 600;
@@ -113,12 +114,12 @@ p {
   background: #212431;
   color: #fff;
   line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
+  padding: 0.52vmax 0;
+  margin-right: 0.26vmax;
   border-radius: 50%;
   text-align: center;
-  width: 36px;
-  height: 36px;
+  width: 2.34vmax;
+  height: 2.34vmax;
   transition: 0.3s;
 }
 #header .profile .social-links a:hover {
@@ -133,7 +134,7 @@ p {
 
 @media (max-width: 1199px) {
   #header {
-    left: -300px;
+    left: -19.53vmax;
   }
 
   #main {
@@ -145,7 +146,7 @@ p {
 --------------------------------------------------------------*/
 /* Desktop Navigation */
 .nav-menu {
-  padding: 30px 0 0 0;
+  padding: 1.9vmax 0 0 0;
 }
 .nav-menu * {
   margin: 0;
@@ -160,14 +161,14 @@ p {
   display: flex;
   align-items: center;
   color: #a8a9b4;
-  padding: 12px 15px;
-  margin-bottom: 8px;
+  padding: 0.78vmax 0.97vmax;
+  margin-bottom: 0.52vmax;
   transition: 0.3s;
-  font-size: 15px;
+  font-size: 0.97vmax;
 }
 .nav-menu a i, .nav-menu a:focus i {
-  font-size: 24px;
-  padding-right: 8px;
+  font-size: 1.56vmax;
+  padding-right: 0.52vmax;
   color: #6f7180;
 }
 .nav-menu a:hover, .nav-menu .active, .nav-menu .active:focus, .nav-menu li:hover > a {
@@ -179,8 +180,8 @@ p {
 }
 /* style="padding-top: 30px; padding-bottom: 10px; align-content: center" */
 .profile .portfolio-wrap {
-   padding-top: 30px;
-   padding-bottom: 10px;
+   padding-top: 1.9vmax;
+   padding-bottom: 0.65vmax;
    align-content: center;
    justify-content: center;
 }
@@ -188,22 +189,22 @@ p {
 /* Mobile Navigation */
 .mobile-nav-toggle {
   position: fixed;
-  right: 15px;
-  top: 15px;
+  right: 0.97vmax;
+  top: 0.97vmax;
   z-index: 9998;
   border: 0;
-  font-size: 24px;
+  font-size: 1.56vmax;
   transition: all 0.4s;
   outline: none !important;
   background-color: #149ddd;
   color: #fff;
-  width: 40px;
-  height: 40px;
+  width: 2.6vmax;
+  height: 2.6vmax;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   line-height: 0;
-  border-radius: 50px;
+  border-radius: 3.2vmax;
   cursor: pointer;
 }
 
@@ -290,20 +291,22 @@ section {
   background: #f5f8fd;
 }
 
-.section-title {
-  padding-bottom: 30px;
+#uploadreport .section-title {
+  display: block;
 }
 
 .section-title p {
-  font-size: large;
+  font-size: 1.3vmax;
   color: #112E54;
+  height: 5vmax;
+  width: 100vmax;
 }
 .section-title h2 {
-  font-size: 32px;
+  font-size: 2vmax;
   font-weight: bold;
-  margin-bottom: 20px;
-  padding-top: 30px;
-  padding-bottom: 20px;
+  margin-bottom: 1.5vmax;
+  padding-top: 2vmax;
+  padding-bottom: 1.5vmax;
   position: relative;
   color: #112E54;
 }
@@ -320,6 +323,10 @@ section {
 .section-title .upload-description {
   margin-bottom: 0;
   padding-left: 100px;
+}
+
+.section-title .merchant-button{
+  padding-bottom: 1vmax;
 }
 
 /*--------------------------------------------------------------
@@ -807,44 +814,48 @@ section {
 }
 .contact .merchant-form {
   width: 100%;
-  height: 100%;
-  padding: 30px;
+  height: 98%;
+  padding: 1.95vmax;
   background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 1.3vmax;
+  box-shadow: 0 0 1.53vmax 0 rgba(0, 0, 0, 0.12);
   position: relative;
-  top: -30px;
-  height: 580px;
 }
 
-.contact .merchant-update-form{
+.merchant-update-form {
   width: 100%;
-  height: 100%;
-  padding: 30px;
+  height: 96%;
+  padding: 1.95vmax;
   background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 1.3vmax;
+  box-shadow: 0 0 1.53vmax 0 rgba(0, 0, 0, 0.12);
   position: relative;
-  top: -60px;
-  height: 580px;
+}
+
+
+.bulk-container {
+  margin-top: 6.5vmax;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 17.5vmax;
 }
 
 .contact .merchant_bulk_upload_div{
-  border: 1px solid #ccc; 
-  padding: 15px; 
-  border-radius: 20px; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  border: 0.065vmax solid #ccc; 
+  padding: 0.97vmax; 
+  border-radius: 1.3vmax; 
+  box-shadow: 0 0 0.65vmax rgba(0, 0, 0, 0.1); 
   background-color: #f9f9f9; 
-  height: 180px;
-  width: 370px;
+  height: 11.71vmax;
+  width: 24vmax;
   align-items: center;
   justify-content: center;
-  margin-left: 350px;
   position: relative;
-  top: 100px;
 }
 
-.section-form .button{
+/* .section-form .button{
   background-color: #112E54 ;
   border: none;
   color: white;
@@ -855,86 +866,92 @@ section {
   font-size: 12px;
   cursor: pointer;
   border-radius: 10px;
-}
+} */
 
 .section-form .button:hover{
      background-color: #1b4a87;
+     color: #fff;
 }
 .contact .merchant-form .form-group, .contact .merchant-update-form .form-group {
-  padding-bottom: 8px;
-  border-radius: 20px;
+  padding-bottom: 0.521vmax;
+  border-radius: 1.3vmax;
 }
 .contact .merchant-form .validate, .contact .merchant-update-form .validate {
   display: none;
   color: red;
-  margin: 0 0 15px 0;
+  margin: 0 0 0.97vmax 0;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 0.84vmax;
 }
 .contact .merchant-form .error-message,.contact .merchant-update-form .error-message {
   display: none;
   color: #fff;
   background: #ed3c0d;
   text-align: left;
-  padding: 15px;
+  padding: 0.97vmax;
   font-weight: 600;
 }
 .contact .merchant-form .error-message br + br, .contact .merchant-update-form .error-message br + br {
-  margin-top: 25px;
+  margin-top: 1.62vmax;
 }
 .contact .merchant-form .sent-message, .contact .merchant-update-form .sent-message {
   display: none;
   color: #fff;
   background: #18d26e;
   text-align: center;
-  padding: 15px;
+  padding: 0.97vmax;
   font-weight: 600;
 }
 .contact .merchant-form .loading, .contact .merchant-update-form .loading {
   display: none;
   background: #fff;
   text-align: center;
-  padding: 15px;
+  padding: 0.97vmax;
 }
 .contact .merchant-form .loading:before, .contact .merchant-update-form .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
+  width: 1.53vmax;
+  height: 1.53vmax;
+  margin: 0 0.65vmax -0.39vmax 0;
+  border: 0.19vmax solid #18d26e;
   border-top-color: #eee;
   -webkit-animation: animate-loading 1s linear infinite;
   animation: animate-loading 1s linear infinite;
 }
+
+.contact .merchant-form .form-group .form-control{
+  border-width: medium;
+}
+
 .contact .merchant-form .form-group, .contact .merchant-update-form .form-group {
-  margin-bottom: 15px;
-  border-radius: 20px;
+  margin-bottom: 0.97vmax;
+  border-radius: 1.3vmax;
 }
 .contact .merchant-form label, .contact .merchant-update-form label  {
-  padding-bottom: 8px;
+  padding-bottom: 0.52vmax;
 }
 .contact .merchant-form input, .contact .merchant-form textarea,.contact .merchant-update-form input, .contact .merchant-update-form textarea {
-  border-radius: 8px;
+  border-radius: 0.52vmax;
   box-shadow: none;
-  font-size: 14px;
+  font-size: 0.911vmax;
 }
 .contact .merchant-form input, .contact .merchant-update-form input {
-  height: 44px;
+  height: 2.86vmax;
 }
 .contact .merchant-form textarea, .contact .merchant-update-form textarea {
-  padding: 10px 15px;
+  padding: 0.65vmax 0.97vmax;
 }
 .contact .merchant-form button[type=submit], .contact .merchant-update-form button[type=submit] {
   color: white;
   background-color: #112E54;
   border: none;
   outline: none;
-  padding: 7px 20px;
-  border-radius: 8px;
+  padding: 0.45vmax 1.3vmax;
+  border-radius: 0.52vmax;
   cursor: pointer;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 0.84vmax 1.75vmax -0.32vmax, rgba(0, 0, 0, 0.3) 0px 0.52vmax 1vmax -0.52vmax;
 }
 .contact .merchant-form button[type=submit]:hover, .contact .merchant-update-form button[type=submit]:hover {
   background: #1b4a87;
@@ -1043,12 +1060,19 @@ section {
 /*--------------------------------------------------------------
 # containers for tables
 --------------------------------------------------------------*/
+/* .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+} */
 
 .table-container {
-  border: 1px solid #ccc; 
+  border: 0.07vmax solid #ccc; 
   padding: 2vmax; 
-  border-radius: 20px; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  border-radius: 1.3vmax; 
+  width: 100%;
+  box-shadow: 0 0 0.658vmax rgba(0, 0, 0, 0.1); 
   background-color: #f9f9f9; 
   display: flex;
   align-items: center;
@@ -1056,22 +1080,78 @@ section {
 }
 
 .dataTables_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-row {
+  display: flex;
   width: 100%;
 }
 
+.table-container .dataTables_filter{
+  display: flex;
+  align-items: center;
+  float: right;
+}
+
+.dataTables_filter label {
+  width: 100%;
+}
+
+.dataTables_filter label::after {
+  content: none;
+}
+
+.dataTables_length {
+  display: flex;
+  align-items: center;
+  float: left;
+}
+
+.dataTables_length label {
+  width: 100%;
+}
+
+.dataTables_wrapper {
+  width: 100%;
+}
+
+.col-md-6 {
+  flex: 1 1 auto;
+  max-width: 50%;
+  box-sizing: border-box;
+}
+
+.col-sm-12 {
+  overflow: auto;
+}
+
 .table-container table {
+  /* display: flex;
+  flex-direction: column; */
   width: 100%;
   border-collapse: collapse; 
 }
 
 .table-container th, .table-container td {
-  border: 1px solid #ddd; 
-  padding: 8px; 
+  border: 0.07vmax solid #ddd; 
+  padding: 0.527vmax; 
 }
 
 .table-container th {
   background-color: #f2f2f2; 
   text-align: left; 
+}
+
+/* .row{
+  margin: 0;
+} */
+
+.main-upload-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .upload-container{
@@ -1087,11 +1167,9 @@ section {
   justify-content: space-evenly;
   position: relative;
   min-width: 0;
-  left: 20vw;
-  top: -5vw;
 }
 
-.upload-inner-container {
+.upload-inner-container, .inner-send-container, .bulk-inner-container {
   display: flex;
   font-size: 1em;
   align-items: center;
@@ -1100,24 +1178,40 @@ section {
   height: 100%;
   width: 100%;
   min-width: None;
+  border-style: dashed;
+  border-radius: 1vmax;
+  border-width: 0.13vmax;
+  border-color: #112E54;
+  background-color:#e7eaed;
+}
+
+.upload-inner-container input, .inner-send-container input {
+  font-size: 1vmax;
+  padding: 0.658vmax;
+  float: left;
 }
 
 .input_1-container, .input_2-container{
   display: flex;
   align-items: center;
-  justify-items: center;
+  justify-items: space-around;
+  flex-direction: column;
 }
 
 .button_upload {
   align-items: center;
   justify-content: center;
   display: flex;
+  position: relative;
+  top: 2vmax;
+  flex-direction: column;
 }
 
-.upload-container label{
+.upload-container label, .send-container label, .form-group-label{
   color: #112E54;
   font-weight: bold;
-  display: block;
+  font-size: 1.25vmax;
+  padding: 0.658vmax;
   float: left;
 }
 
@@ -1133,21 +1227,18 @@ label:after { content: ": " }
 # CSS for the changes done
 --------------------------------------------------------------*/
 
-.file-selector {
+.file-selector, .send-reports-button, .bulk-button, .delete-button {
   color: white;
   background-color: #112E54;
   border: none;
   outline: none;
-  padding: 7px 20px;
-  margin-left: 250px;
-  margin-right: -250px;
-  border-radius: 8px;
-  margin-top: 80px;
+  padding: 0.461vmax 1.317vmax;
+  border-radius: 0.527vmax;
   cursor: pointer;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 0.84vmax 1.75vmax -0.32vmax, rgba(0, 0, 0, 0.3) 0px 0.52vmax 1vmax -0.52vmax;
 }
 
-.send-reports-button {
+/* .send-reports-button {
   color: white;
   background-color: #112E54;
   border: none;
@@ -1158,9 +1249,9 @@ label:after { content: ": " }
   left: -100px;
   cursor: pointer;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-}
+} */
 
-.file-selector:hover {
+.file-selector:hover, .send-reports-button:hover, .text-end .delete-button:hover {
   background-color: #1b4a87;
 }
 
@@ -1168,37 +1259,28 @@ label:after { content: ": " }
   padding-left: 30px;
 }
 
+.section-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 17vmax;
+}
+
 .section-form .send-container {
   border: 1px solid #ccc; 
-  padding: 15px; 
-  border-radius: 20px; 
+  padding: 0.97vmax; 
+  border-radius: 1.3vmax; 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
   background-color: #f9f9f9; 
-  margin-left: 300px;
-  margin-right: 380px;
-  margin-bottom: 60px;
-  height: 180px;
-  width: 370px;
+  height: 13vmax;
+  width: 24vmax;
   position: relative;
-  top: -30px;
 }
 
-.send-photo{
-  position: relative;
-  top: 15px;
-}
-
-.send-container .input_3, .input_4 {
+.input_4 {
   padding: 10px;
   padding-left: 50px;
-}
-
-.send-container label, .form-group-label{
-  color: #112E54;
-  font-weight: bold;
-  display: block;
-  float: left;
-  margin: 10px;
 }
 
 .bi-envelope-paper-fill,  .bi-backpack4-fill{
@@ -1206,29 +1288,9 @@ label:after { content: ": " }
 }
 
 .bulk-photo i{
-  padding-left: 150px;
-  position: relative;
-  top: 10px;
-}
-
-.bulk-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  top: 150px;
-  right: 55px;
-}
-
-.bulk-button button{
-  color: white;
-  background-color: #112E54;
-  border: none;
-  outline: none;
-  padding: 7px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 /* Default styles for larger screens */
@@ -1240,6 +1302,22 @@ label:after { content: ": " }
 @media only screen and (max-width: 600px) {
   .button {
       width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  #example {
+      overflow-x: auto; 
+  }
+  #example th, #example td {
+      white-space: nowrap; 
+  }
+}
+
+@media (min-width: 600px) {
+  .container{
+    width: 96%;
+    height: 77%;
   }
 }
 

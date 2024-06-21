@@ -2,44 +2,41 @@
 <section id="uploadreport" class="skills section-bg">
     <div class="container">
         <div class="section-title">
-            <h2>Upload Report<i class="bi bi-cloud-upload-fill img_1"></i></h2>
-            <p>Please upload the necessary <strong>files</strong> to generate the <strong>PDF</strong> </p>
+            <div class="upload-h2">
+                <h2>Upload Report<i class="bi bi-cloud-upload-fill img_1"></i></h2>
+            </div>
+            <div class="upload-p">
+                <p>Please upload the necessary <strong>files</strong> to generate the <strong>PDF</strong> </p>
+            </div>
         </div>
 
-        <div class="row skills-content">
-
-            <div class="col-lg-5" data-aos="fade-up">
-                <form action="upload/" enctype="multipart/form-data" method="post" role="form" class="merchant-form justify-content-center">
-                    {% csrf_token %}
-                    <div class="row">
-                        <div class="form-group">
-                            <div class="section-form text-end upload-container">
-                                <!-- <div class=""> -->
-                                    <div class="upload-inner-container">
-                                        <div class="input_1-container">
-                                            <div class="upload-label"></div>
+        <div class="row g-0 skills-content">
+            <form action="upload/" enctype="multipart/form-data" method="post" role="form" class="merchant-form justify-content-center">
+                {% csrf_token %}
+                <div class="row upload-input">
+                    <div class="form-group main-upload-container">
+                        <div class="section-form text-end upload-container">
+                            <!-- <div class=""> -->
+                                <div class="upload-inner-container">
+                                    <div class="input_1-container">
                                             <label for="id_paramotor_all_reports">Paramotor All Reports</label>
                                             <input type="file" class="input_1" name="paramotor_all_reports" id="id_paramotor_all_reports" required>
-                                        </div>
-                                        <!-- <hr> -->
-                                         <div class="input_2-container">
-                                            <label for="id_final_all_reports">Final All Reports</label>
-                                            <input type="file" class="input_2" name="final_all_reports" id="id_final_all_reports" required>    
-                                         </div>
-                                        <!-- <hr> -->
                                     </div>
-                                <!-- </div> -->
-                            </div>
-                            <div class="button_upload">
-                                <button class="file-selector">Upload files</button>
-                            </div>
+                                    <!-- <hr> -->
+                                        <div class="input_2-container">
+                                        <label for="id_final_all_reports">Final All Reports</label>
+                                        <input type="file" class="input_2" name="final_all_reports" id="id_final_all_reports" required>    
+                                        </div>
+                                    <!-- <hr> -->
+                                </div>
+                            <!-- </div> -->
                         </div>
                     </div>
-                </form>
-
-            </div>
-
+                    <div class="button_upload">
+                        <button class="file-selector">Upload files</button>
+                    </div>
+                </div>
+            </form>
         </div>
-
     </div>
 </section><!-- End Skills Section -->

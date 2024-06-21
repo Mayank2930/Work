@@ -102,14 +102,11 @@
                 </div>
 
                 <div class="row" data-aos="fade-in">
-
-                    <div class="d-flex align-items-stretch">
-
-
+                    <div class="d-flex bulk-container">
                         <div class="col-lg-10 mt-5 mt-lg-0 d-flex align-items-stretch merchant_bulk_upload_div">
                             <form action="merchant-bulk-upload/" enctype="multipart/form-data" method="post" role="form" class="merchant-bulk-form justify-content-center">
                                 {% csrf_token %}
-                                <div class="row">
+                                <div class="bulk-inner-container">
                                     <div class="form-group col-md-12">
                                         <label for="id_bulk_merchant" class="form-group-label">Select File</label>
                                         <input type="file" class="input_4" name="bulk_merchant" id="id_bulk_merchant" required>
@@ -118,10 +115,10 @@
                                 </div>
                             </form>
                         </div>
+                        <div ><button type="submit" class="bulk-button">Add Merchant</button></div>
                     </div>
                 </div>
             </div>
-            <div class="bulk-button"><button type="submit">Add Merchant</button></div>
         </section><!-- End Contact Section -->
 
     </main><!-- End #main -->
