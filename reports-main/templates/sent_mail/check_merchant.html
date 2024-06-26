@@ -41,41 +41,42 @@
                         {% csrf_token %}
                         <div class="row">
                             <div class="form-group">
-                                <div class="section-form text-center ">
+                                <div class="section-form text-center sent-mail">
                                     <label for="id_paid_date" style="text-align: left">Please Select Settlement Date:</label>
-                                    <br>
+                                   
                                     <input type="date" id="id_paid_date" name="paid_date" style="border-top-right-radius: 10px;padding: 10px;margin: 10px;border-width: 0.5px" required>
-                                    <hr>
+                                    
                                     <button class="button" type="submit">Send reports</button>
                                 </div>
 
                             </div>
-                            {#                here i will put existing tid#}
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th scope="col">TID</th>
-                                    <th scope="col">Status</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {% for tid in non_existing_tids %}
+                            {#here i will put existing tid#}
+                            <div class="table-container">
+                                <table class="table sent-mail-table" style="width:100%">
+                                    <thead>
                                     <tr>
-                                        <th scope="row">{{ tid }}</th>
-                                        <td>N.A</td>
+                                        <th scope="col">TID</th>
+                                        <th scope="col">Status</th>
                                     </tr>
-                                {% endfor %}
-                                {% for tid in existing_tids %}
-                                    <tr>
-                                        <th scope="row">{{ tid }}</th>
-                                        <td>Exists</td>
-                                    </tr>
-                                {% endfor %}
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                    {% for tid in non_existing_tids %}
+                                        <tr>
+                                            <th scope="row">{{ tid }}</th>
+                                            <td>N.A</td>
+                                        </tr>
+                                    {% endfor %}
+                                    {% for tid in existing_tids %}
+                                        <tr>
+                                            <th scope="row">{{ tid }}</th>
+                                            <td>Exists</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
 
-
-                            {#                    here i will put non existing tid#}
+                            {#here i will put non existing tid#}
                         </div>
                     </form>
                 </div>

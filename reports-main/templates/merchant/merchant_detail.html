@@ -25,12 +25,12 @@
         </div>
     </header><!-- End Header --> 
 
-
+``
     <main id="main" style="background-color: #eaeaea">
         <!-- ======= Contact Section ======= -->
         <section id="merchant_form" class="contact justify-content-center" >
             <div class="container" >
-                <div class="section-title">
+                <div class="section-title update-merchant-title">
                     <h2>Merchant Detail</h2>
                     {% include 'utils/message.html' %}
                     <div class="text-end">
@@ -48,7 +48,7 @@
 
 
                             {#Merchant Form starts From Here#}
-                            <form method="post" role="form" class="merchant-update-form justify-content-center">
+                            <form method="post" role="form" class="merchant-form merchant-detail-1 justify-content-center">
                                 {% csrf_token %}
                                 <div class="row">
                                     <div class="form-group col-md-12">

@@ -1,5 +1,5 @@
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import MerchantForm
 from django.contrib import messages
@@ -7,8 +7,6 @@ import pandas as pd
 import os
 # Create your views here.
 from .models import Merchant
-
-
 
 # Home Screen
 @login_required
@@ -29,7 +27,8 @@ def home(request):
         }
         return render(request, 'merchant/home.html', context)
     except Exception as e:
-        return HttpResponse(f"Error occured : {e}")
+        messages.error(request, f"Error occured: {e}")
+        return redirect('/')
 
 
 # A form to create Merchant
@@ -41,6 +40,7 @@ def merchant_form(request):
             form = MerchantForm(request.POST)
             if form.is_valid():
                 form.save()
+                messages.success(request, "Merchant added successfully !")
                 return HttpResponseRedirect('/')
         else:
             form = MerchantForm(initial={'key': 'value'})
@@ -51,7 +51,8 @@ def merchant_form(request):
         }
         return render(request, 'merchant/merchant_form.html', context)
     except Exception as e:
-        return HttpResponse(f"Error : {e}")
+        messages.error(request, f"Error occured: {e}")
+        return redirect('/')
 
 # This Function lets to bulk upload new merchant
 @login_required
@@ -59,8 +60,15 @@ def merchant_bulk_upload(request):
     if request.method == 'POST':
         try: 
             # bulk = (r'C:\Users\hp\OneDrive\Desktop\Merchantdataformat.xlsx')
-
-            bulk_merch = pd.read_excel(request.FILES.get('bulk_merchant'))
+            if 'bulk_merchant' in request.FILES:
+                file = request.FILES['bulk_merchant']
+                if file.name.endswith('.csv'):
+                    bulk_merch = pd.read_csv(request.FILES.get('bulk_merchant'))
+                elif file.name.endswith('.xlxs'):
+                    bulk_merch = pd.read_excel(request.FILES.get('bulk_merchant'))
+                else:
+                    messages.error(request, "Unsupported file type uploaded. Please upload .csv or .xlxs(excel) file")
+                    return redirect('merchant_bulk_upload') 
 
             bulk_merchant = bulk_merch.values.tolist()
 
@@ -88,7 +96,8 @@ def merchant_bulk_upload(request):
                     save_merchant.save()
             return HttpResponseRedirect("/")
         except Exception as e:
-            return HttpResponse(f"Error occured: {e}")
+            messages.error(request, f"Error occured: {e}")
+            return redirect('/')
     else:
         pass
         return render(request, 'merchant/merchant_form.html')
@@ -97,7 +106,6 @@ def merchant_bulk_upload(request):
 @login_required
 def merchant_detail(request, id):
         merchant = get_object_or_404(Merchant, id=id)
-
         try: 
             form = MerchantForm(request.POST or None, instance=merchant)
 
@@ -110,19 +118,21 @@ def merchant_detail(request, id):
             if request.method == 'POST':
                     if form.is_valid():
                         form.save()
-                        messages.success(request, "Merchant Updated")
+                        messages.success(request, "Merchant Updated !")
                     else:
                         messages.error(request, "Form is not valid")
 
             return render(request, "merchant/merchant_detail.html", context)
         except Exception as e:
-            return HttpResponse(f"Error occured: {e}")
+            messages.error(request, f"Error occured: {e}")
+            return redirect('/')
 
 @login_required
 def delete_merchant(request, id):
         merchant = get_object_or_404(Merchant, id=id)
         print(merchant)
         merchant.delete()
+        messages.success(request, 'Merchant deleted successfully!')
         return HttpResponseRedirect("/")
 
 

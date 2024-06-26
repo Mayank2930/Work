@@ -188,6 +188,17 @@
 
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check if the URL has an anchor for scrolling
+    if (window.location.hash) {
+        // Scroll to the element with the matching ID
+        var element = document.querySelector(window.location.hash);
+        if (element) {
+            element.scrollIntoView();
+        }
+    }
+});
+
   /**
    * Initiate portfolio lightbox 
    */

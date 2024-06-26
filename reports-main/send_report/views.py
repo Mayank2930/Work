@@ -5,7 +5,7 @@ import os
 from .models import EmailLog
 from zipfile import ZipFile
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from openpyxl.packaging.manifest import mimetypes
 from django.http import HttpResponse
 
@@ -72,8 +72,10 @@ def check_merchant(request):
             }
         except FileNotFoundError:
             messages.error(request, "File not found")
+            return redirect('/')
         except Exception as e:
             messages.error(request, f"Error occured: {e}")
+            return redirect('/')
 
         return render(request, "sent_mail/check_merchant.html", context)
 
@@ -145,7 +147,8 @@ def send_reports_and_log_mail(request):
                             if os.path.exists(file):
                                 os.remove(file)
         except Exception as e:
-            return HttpResponse("Error occured: {e}")
+            messages.error(request, "Error occured: {e}.")
+            return redirect('/')
                       
         context = {
             "sent_mail_count": sent_mail_count,

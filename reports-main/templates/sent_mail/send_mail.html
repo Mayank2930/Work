@@ -36,7 +36,7 @@
                     <h2>Sent Mail</h2>
                 </div>
 
-                <div class="row no-gutters">
+                <div class="row no-gutters sent-mail-count-div">
 
                     <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
                         <div class="count-box">
@@ -61,42 +61,44 @@
                         </div>
                     </div>
                 </div>
-
-                <table id="example" class="table table-striped" style="width:100%">
-                    <thead>
-                    <tr>
-                        <th>User</th>
-                        <th>Status</th>
-
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for user in rejected_mail_users %}
+                
+                <div class="table-container">
+                    <table id="example" class="table table-striped" style="width:100%">
+                        <thead>
                         <tr>
-                            <td>{{ user }}</td>
-                            <td>REJECTED</td>
+                            <th>User</th>
+                            <th>Status</th>
+    
                         </tr>
-                    {% endfor %}
-                    {% for user in unsent_mail_users %}
+                        </thead>
+                        <tbody>
+                        {% for user in rejected_mail_users %}
+                            <tr>
+                                <td>{{ user }}</td>
+                                <td>REJECTED</td>
+                            </tr>
+                        {% endfor %}
+                        {% for user in unsent_mail_users %}
+                            <tr>
+                                <td>{{ user }}</td>
+                                <td>UN-SENT</td>
+                            </tr>
+                        {% endfor %}
+                        {% for user in sent_mail_users %}
+                            <tr>
+                                <td>{{ user }}</td>
+                                <td>SENT</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                        <tfoot>
                         <tr>
-                            <td>{{ user }}</td>
-                            <td>UN-SENT</td>
+                            <th>User</th>
+                            <th>Status</th>
                         </tr>
-                    {% endfor %}
-                    {% for user in sent_mail_users %}
-                        <tr>
-                            <td>{{ user }}</td>
-                            <td>SENT</td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <th>User</th>
-                        <th>Status</th>
-                    </tr>
-                    </tfoot>
-                </table>
+                        </tfoot>
+                    </table>
+                </div>
 
             </div>
         </section><!-- End Facts Section -->

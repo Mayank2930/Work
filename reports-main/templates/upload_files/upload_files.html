@@ -136,15 +136,16 @@
                 </div>
 
 
-                    <div  class="merchant-form ">
-
-                        <form action="download/" enctype="multipart/form-data" method="post" role="form" >
-                            {% csrf_token %}
-
-                                    <button class="button" type="submit" style="margin: 10px">Downloads reports</button>
-                            </form>
-                                </div>
-                            </div>
+                    <div  class="download-container">
+                        <div class="download-inner-container">
+                            <form action="download/" enctype="multipart/form-data" method="post" role="form" >
+                                {% csrf_token %}
+                                        <label>Download the reports by clicking  the buttons below </label>
+                                        <button class="download-button" type="submit" style="margin: 10px">Downloads reports</button>
+                                </form>
+                        </div>
+                    </div>
+            </div>
 
 
 

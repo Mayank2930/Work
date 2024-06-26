@@ -88,6 +88,14 @@ p {
   background: #112e54;
   overflow-y: auto;
 }
+
+#header .profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
 #header .profile img {
   margin: 0.97vmax auto;
   display: block;
@@ -291,6 +299,16 @@ section {
   background: #f5f8fd;
 }
 
+.merchant-detail-1  {
+  position: relative;
+  top: -1vmax;
+}
+
+.update-merchant-title {
+  position: relative;
+  bottom: 1.2vmax;
+}
+
 #uploadreport .section-title {
   display: block;
 }
@@ -329,6 +347,10 @@ section {
   padding-bottom: 1vmax;
 }
 
+.login-section {
+  overflow: scroll;
+}
+
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
@@ -362,45 +384,46 @@ section {
 /*--------------------------------------------------------------
 # send_report
 --------------------------------------------------------------*/
-.send_report {
-  padding-bottom: 30px;
+#send_report {
+  padding-bottom: 1.9vmax;
+  overflow: scroll;
 }
-.send_report .count-box {
-  padding: 30px;
+#send_report .count-box {
+  padding: 1.9vmax;
   width: 100%;
 }
-.send_report .count-box i {
+#send_report .count-box i {
   display: block;
-  font-size: 44px;
+  font-size: 2.8vmax;
   color: #149ddd;
   float: left;
   line-height: 0;
 }
-.send_report .count-box span {
-  font-size: 48px;
-  line-height: 40px;
+#send_report .count-box span {
+  font-size: 3.1vmax;
+  line-height: 2.6vmax;
   display: block;
   font-weight: 700;
   color: #050d18;
-  margin-left: 60px;
+  margin-left: 3.9vmax;
 }
-.send_report .count-box p {
-  padding: 15px 0 0 0;
-  margin: 0 0 0 60px;
+#send_report .count-box p {
+  padding: 0.97vmax 0 0 0;
+  margin: 0 0 0 3.9vmax;
   font-family: "Raleway", sans-serif;
-  font-size: 14px;
+  font-size: 0.96vmax;
   color: #122f57;
 }
-.send_report .count-box a {
+#send_report .count-box a {
   font-weight: 600;
   display: block;
-  margin-top: 20px;
+  margin-top: 1.3vmax;
   color: #122f57;
-  font-size: 15px;
+  font-size: 0.977vmax;
   font-family: "Poppins", sans-serif;
   transition: ease-in-out 0.3s;
 }
-.send_report .count-box a:hover {
+#send_report .count-box a:hover {
   color: #1f5297;
 }
 
@@ -812,7 +835,7 @@ section {
   background: #149ddd;
   color: #fff;
 }
-.contact .merchant-form {
+.contact .merchant-form  {
   width: 100%;
   height: 98%;
   padding: 1.95vmax;
@@ -821,17 +844,6 @@ section {
   box-shadow: 0 0 1.53vmax 0 rgba(0, 0, 0, 0.12);
   position: relative;
 }
-
-.merchant-update-form {
-  width: 100%;
-  height: 96%;
-  padding: 1.95vmax;
-  background: #fff;
-  border-radius: 1.3vmax;
-  box-shadow: 0 0 1.53vmax 0 rgba(0, 0, 0, 0.12);
-  position: relative;
-}
-
 
 .bulk-container {
   margin-top: 6.5vmax;
@@ -872,18 +884,18 @@ section {
      background-color: #1b4a87;
      color: #fff;
 }
-.contact .merchant-form .form-group, .contact .merchant-update-form .form-group {
+.contact .merchant-form .form-group {
   padding-bottom: 0.521vmax;
   border-radius: 1.3vmax;
 }
-.contact .merchant-form .validate, .contact .merchant-update-form .validate {
+.contact .merchant-form .validate {
   display: none;
   color: red;
   margin: 0 0 0.97vmax 0;
   font-weight: 400;
   font-size: 0.84vmax;
 }
-.contact .merchant-form .error-message,.contact .merchant-update-form .error-message {
+.contact .merchant-form .error-message {
   display: none;
   color: #fff;
   background: #ed3c0d;
@@ -891,10 +903,10 @@ section {
   padding: 0.97vmax;
   font-weight: 600;
 }
-.contact .merchant-form .error-message br + br, .contact .merchant-update-form .error-message br + br {
+.contact .merchant-form .error-message br + br {
   margin-top: 1.62vmax;
 }
-.contact .merchant-form .sent-message, .contact .merchant-update-form .sent-message {
+.contact .merchant-form .sent-message {
   display: none;
   color: #fff;
   background: #18d26e;
@@ -902,13 +914,13 @@ section {
   padding: 0.97vmax;
   font-weight: 600;
 }
-.contact .merchant-form .loading, .contact .merchant-update-form .loading {
+.contact .merchant-form .loading {
   display: none;
   background: #fff;
   text-align: center;
   padding: 0.97vmax;
 }
-.contact .merchant-form .loading:before, .contact .merchant-update-form .loading:before {
+.contact .merchant-form .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -925,25 +937,27 @@ section {
   border-width: medium;
 }
 
-.contact .merchant-form .form-group, .contact .merchant-update-form .form-group {
+.contact .merchant-form .form-group {
   margin-bottom: 0.97vmax;
   border-radius: 1.3vmax;
 }
-.contact .merchant-form label, .contact .merchant-update-form label  {
+.contact .merchant-form label {
   padding-bottom: 0.52vmax;
+  font-size: 1.2vmax;
+  font-weight: 400;
 }
-.contact .merchant-form input, .contact .merchant-form textarea,.contact .merchant-update-form input, .contact .merchant-update-form textarea {
+.contact .merchant-form input, .contact .merchant-form textarea {
   border-radius: 0.52vmax;
   box-shadow: none;
   font-size: 0.911vmax;
 }
-.contact .merchant-form input, .contact .merchant-update-form input {
+.contact .merchant-form input {
   height: 2.86vmax;
 }
-.contact .merchant-form textarea, .contact .merchant-update-form textarea {
+.contact .merchant-form textarea {
   padding: 0.65vmax 0.97vmax;
 }
-.contact .merchant-form button[type=submit], .contact .merchant-update-form button[type=submit] {
+.contact .merchant-form button[type=submit] {
   color: white;
   background-color: #112E54;
   border: none;
@@ -952,8 +966,9 @@ section {
   border-radius: 0.52vmax;
   cursor: pointer;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 0.84vmax 1.75vmax -0.32vmax, rgba(0, 0, 0, 0.3) 0px 0.52vmax 1vmax -0.52vmax;
+  font-size: 1vmax;
 }
-.contact .merchant-form button[type=submit]:hover, .contact .merchant-update-form button[type=submit]:hover {
+.contact .merchant-form button[type=submit]:hover {
   background: #1b4a87;
 }
 @-webkit-keyframes animate-loading {
@@ -1017,34 +1032,35 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  padding: 15px;
+  padding: 0.977vmax;
   color: #f4f6fd;
-  font-size: 14px;
+  font-size: 0.911vmax;
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: 19.51vmax;
   z-index: 9999;
   background: #112e54;
 }
+
 #footer .copyright {
   text-align: center;
 }
 #footer .credits {
-  padding-top: 5px;
+  padding-top: 0.326vmax;
   text-align: center;
-  font-size: 13px;
+  font-size: 0.846vmax;
   color: #eaebf0;
 }
 
 #footer .container{
-  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.95vmax;
 }
 
 #footer .inner-container{
-  padding-top: 50px;
-  padding-bottom: 10px;
-  padding-left: 60px;
   font-weight: bolder;
   font-size: large;
 }
@@ -1053,7 +1069,7 @@ section {
   #footer {
     position: static;
     width: auto;
-    padding-right: 20px 15px;
+    padding-right: 1.3vmax 0.97vmax;
   }
 }
 
@@ -1077,6 +1093,22 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.sent-mail {
+  position: relative;
+  top: -1vmax;
+}
+
+.sent-mail table{
+  text-align: center;
+  overflow: auto;
+}
+
+
+.sent-mail-count-div {
+  align-items: center;
+  justify-content: space-around;
 }
 
 .dataTables_wrapper {
@@ -1132,6 +1164,7 @@ section {
   flex-direction: column; */
   width: 100%;
   border-collapse: collapse; 
+  overflow: scroll;
 }
 
 .table-container th, .table-container td {
@@ -1147,6 +1180,8 @@ section {
 /* .row{
   margin: 0;
 } */
+
+
 
 .main-upload-container {
   display: flex;
@@ -1169,7 +1204,7 @@ section {
   min-width: 0;
 }
 
-.upload-inner-container, .inner-send-container, .bulk-inner-container {
+.upload-inner-container, .inner-send-container, .bulk-inner-container, .download-inner-container {
   display: flex;
   font-size: 1em;
   align-items: center;
@@ -1185,7 +1220,7 @@ section {
   background-color:#e7eaed;
 }
 
-.upload-inner-container input, .inner-send-container input {
+.upload-inner-container input, .inner-send-container input, .bulk-inner-container input, .sent-mail input {
   font-size: 1vmax;
   padding: 0.658vmax;
   float: left;
@@ -1207,7 +1242,7 @@ section {
   flex-direction: column;
 }
 
-.upload-container label, .send-container label, .form-group-label{
+.upload-container label, .send-container label, .form-group-label, .download-container label, .sent-mail label{
   color: #112E54;
   font-weight: bold;
   font-size: 1.25vmax;
@@ -1216,7 +1251,6 @@ section {
 }
 
 label:after { content: ": " }
-
 .img_1, .img_3, .img_2 {
   padding: 10px;
   padding-top: 15px;
@@ -1227,15 +1261,16 @@ label:after { content: ": " }
 # CSS for the changes done
 --------------------------------------------------------------*/
 
-.file-selector, .send-reports-button, .bulk-button, .delete-button {
-  color: white;
-  background-color: #112E54;
+.file-selector, .send-reports-button, .bulk-button, .delete-button, .download-button, .sent-mail button {
+  color: white !important;
+  background-color: #112E54 !important;
   border: none;
   outline: none;
   padding: 0.461vmax 1.317vmax;
   border-radius: 0.527vmax;
   cursor: pointer;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 0.84vmax 1.75vmax -0.32vmax, rgba(0, 0, 0, 0.3) 0px 0.52vmax 1vmax -0.52vmax;
+  font-size: 1.2vmax;
 }
 
 /* .send-reports-button {
@@ -1251,8 +1286,8 @@ label:after { content: ": " }
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 } */
 
-.file-selector:hover, .send-reports-button:hover, .text-end .delete-button:hover {
-  background-color: #1b4a87;
+.file-selector:hover, .send-reports-button:hover, .text-end .delete-button:hover, .bulk-button:hover {
+  background-color: #1b4a87 !important;
 }
 
 .upload-description {
@@ -1267,7 +1302,7 @@ label:after { content: ": " }
   height: 17vmax;
 }
 
-.section-form .send-container {
+.section-form .send-container, .download-container {
   border: 1px solid #ccc; 
   padding: 0.97vmax; 
   border-radius: 1.3vmax; 
@@ -1287,6 +1322,14 @@ label:after { content: ": " }
   color: #112E54;
 }
 
+.send-photo {
+  display: flex;
+}
+
+.send-photo i {
+  font-size: 1.6vmax;
+}
+
 .bulk-photo i{
   display: flex;
   align-items: center;
@@ -1296,7 +1339,16 @@ label:after { content: ": " }
 /* Default styles for larger screens */
 .button {
   width: 200px;
-}  
+} 
+
+.alert {
+  z-index: 10000;
+}
+
+.alert-dismissible {
+  background-color: #FFFDD0;
+}
+
 
 /* Media query for smaller screens */
 @media only screen and (max-width: 600px) {
@@ -1321,3 +1373,9 @@ label:after { content: ": " }
   }
 }
 
+@media (min-width: 768px) {
+  .col-md-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
